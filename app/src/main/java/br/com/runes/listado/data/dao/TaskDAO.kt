@@ -16,6 +16,6 @@ interface TaskDAO {
     @Query("DELETE FROM Tasks")
     suspend fun deleteAll()
 
-    @Query("SELECT id, title, note, date, hour, isComplete FROM Tasks ORDER BY isComplete ASC, date DESC")
+    @Query("SELECT id, title, note, date, hour, isComplete FROM Tasks ORDER BY isComplete ASC, date ASC")
     fun getAll(): Flow<List<Task>?>
 }
