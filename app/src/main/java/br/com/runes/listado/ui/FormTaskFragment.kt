@@ -1,6 +1,5 @@
 package br.com.runes.listado.ui
 
-import android.app.Activity
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -104,6 +103,7 @@ class FormTaskFragment : Fragment(R.layout.fragment_form_task) {
         val taskArg = navArgs.task
 
         val task = Task(
+            id = taskArg?.id ?: 0,
             title = binding.tilTitle.text,
             date = binding.tilDate.text,
             note = binding.tilNote.text,

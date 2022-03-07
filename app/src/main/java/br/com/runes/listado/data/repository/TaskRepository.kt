@@ -13,7 +13,9 @@ class TaskRepository(private val dataSource: TaskDataSource) {
         task.toListModel()
     }.asLiveData(Dispatchers.IO)
 
-    suspend fun saveTask(task: Task) = dataSource.save(task.toEntity())
+    suspend fun saveTask(task: Task) {
+        dataSource.save(task.toEntity())
+    }
 
     suspend fun deleteTask(task: Task) = dataSource.delete(taskId = task.id)
 }

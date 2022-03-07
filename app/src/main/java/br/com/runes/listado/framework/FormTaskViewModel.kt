@@ -8,14 +8,14 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class FormTaskViewModel(
-    private val task: Task?,
+    initTask: Task?,
     private val saveTaskUseCase: SaveTaskUseCase
 ) : ViewModel() {
     private var _isNewTask = MutableLiveData<Boolean>()
     val isNewTask: LiveData<Boolean> = _isNewTask
 
    init {
-       _isNewTask.value = task == null
+       _isNewTask.value = initTask == null
    }
 
     fun saveTask(task: Task) {
