@@ -12,6 +12,7 @@ import br.com.runes.listado.domain.model.Task
 
 class TaskListAdapter : ListAdapter<Task, TaskListAdapter.TaskViewHolder>(DiffCallback()) {
 
+    var itemClick : (Task) -> Unit = {}
     var listenerChangeStatus : (Task) -> Unit = {}
     var listenerEdit : (Task) -> Unit = {}
     var listenerDelete : (Task) -> Unit = {}
@@ -34,6 +35,9 @@ class TaskListAdapter : ListAdapter<Task, TaskListAdapter.TaskViewHolder>(DiffCa
             binding.task = item
             binding.ivMore.setOnClickListener {
                 showPopup(item)
+            }
+            binding.root.setOnClickListener {
+                itemClick(item)
             }
         }
 

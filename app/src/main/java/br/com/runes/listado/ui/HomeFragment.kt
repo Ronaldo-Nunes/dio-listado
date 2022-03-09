@@ -64,6 +64,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             showAddTaskFragment()
         }
 
+        listAdapter.itemClick = {
+            findNavController().navigate(HomeFragmentDirections.navToDialogTaskDetail(it))
+        }
+
         listAdapter.listenerChangeStatus = { task ->
             viewModel.changeTaskStatus(task)
         }

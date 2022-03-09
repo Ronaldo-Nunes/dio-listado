@@ -13,9 +13,12 @@
     <string name="label_you_dont_have_tasks">Ops! Você não possui nenhuma tarefa.</string>
     <string name="label_note">Anotação</string>
     <string name="label_complete">Concluir</string>
+    <string name="label_completed">Concluída</string>
+    <string name="label_no_note">Nenhuma anotação</string>
     <string name="formatted_date_hour">%1$s às %2$s.</string>
     <string name="label_resume">Retomar</string>
     <string name="label_back">Voltar</string>
     <string name="helper_optional">Opcional</string>
     <string name="message_fill_error">Preencha os campos necessários</string>
+    <string name="label_pending">Pendente</string>
 </resources>
