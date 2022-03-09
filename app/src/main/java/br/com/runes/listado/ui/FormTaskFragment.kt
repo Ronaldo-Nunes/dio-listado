@@ -100,7 +100,7 @@ class FormTaskFragment : Fragment(R.layout.fragment_form_task) {
     }
 
     private fun saveTask() {
-        val taskArg = navArgs.task
+        val taskArg = viewModel.getInitTask()
 
         val task = Task(
             id = taskArg?.id ?: 0,

@@ -8,7 +8,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class FormTaskViewModel(
-    initTask: Task?,
+    private val initTask: Task?,
     private val saveTaskUseCase: SaveTaskUseCase
 ) : ViewModel() {
     private var _isNewTask = MutableLiveData<Boolean>()
@@ -25,6 +25,8 @@ class FormTaskViewModel(
             }
         }
     }
+
+    fun getInitTask() = initTask
 
 
     @Suppress("UNCHECKED_CAST")
